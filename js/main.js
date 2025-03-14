@@ -38,7 +38,6 @@ function generateBubbles() {
   const time = randomIntFromInterval(5000, 20000);
 
   if (size > 0.4) {
-    console.log(size);
     newBubble.animate(
       [
         { transform: `translate(${x}vw, 10vh) translateZ(150px) scale(${size})` },

@@ -33,8 +33,8 @@ body {
 .coral-1 {
   background: url('../images/coral-1.png') no-repeat;
   background-size: contain;
-  width: 450px;
-  height: 450px;
+  width: calc(var(--index) * 22);
+  height: calc(var(--index) * 22);
   position: absolute;
   left: -10px;
   bottom: -10px;
@@ -44,8 +44,8 @@ body {
 .coral-2 {
   background: url('../images/coral-2.png') no-repeat;
   background-size: contain;
-  width: 287px;
-  height: 480px;
+  width: calc(var(--index) * 13);
+  height: calc(var(--index) * 21.7);
   position: absolute;
   right: 0;
   bottom: 0;
@@ -55,8 +55,8 @@ body {
 .coral-3 {
   background: url('../images/coral-3.png') no-repeat;
   background-size: contain;
-  width: 340px;
-  height: 340px;
+  width: calc(var(--index) * 15);
+  height: calc(var(--index) * 15);
   position: absolute;
   left: 35vw;
   bottom: -60px;
@@ -161,6 +161,6 @@ body {
   left: 0;
   background: url('../images/bg-bubble.png');
   background-size: 100%;
-  width: 60px;
-  height: 60px;
+  width: calc(var(--index) * 2.5);
+  height: calc(var(--index) * 2.5);
 }
