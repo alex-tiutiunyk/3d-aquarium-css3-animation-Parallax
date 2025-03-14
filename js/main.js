@@ -12,22 +12,20 @@ function onMove() {
 
   const isTouchSupported =
     'ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
-
   isTouchSupported ? (event = 'touchmove') : (event = 'mousemove');
 
   document.addEventListener(event, (e) => {
-    let touch = e.touches[0];
+    let clientEvent = e;
+
+    if (isTouchSupported) {
+      let touch = e.touches[0];
+      clientEvent = touch;
+    }
 
     Object.assign(document.documentElement, {
       style: `
-        --move-x: ${(
-          ((isTouchSupported ? touch : e).clientX - window.innerWidth / 2) *
-          -0.007
-        ).toFixed(1)}deg;
-        --move-y: ${(
-          ((isTouchSupported ? touch : e).clientY - window.innerHeight / 2) *
-          0.015
-        ).toFixed(1)}deg;
+        --move-x: ${((clientEvent.clientX - window.innerWidth / 2) * -0.007).toFixed(1)}deg;
+        --move-y: ${((clientEvent.clientY - window.innerHeight / 2) * 0.015).toFixed(1)}deg;
       `,
     });
   });
