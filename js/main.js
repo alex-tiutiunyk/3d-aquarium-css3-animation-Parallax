@@ -1,5 +1,4 @@
-onMouseMove();
-onTouchMove();
+onMove();
 setInterval(() => {
   generateBubbles();
 }, 500);
@@ -8,27 +7,27 @@ function randomIntFromInterval(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-function onMouseMove() {
-  document.addEventListener('mousemove', (e) => {
+function onMove() {
+  let event = '';
+
+  const isTouchSupported =
+    'ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
+
+  isTouchSupported ? (event = 'touchmove') : (event = 'mousemove');
+
+  document.addEventListener(event, (e) => {
+    let touch = e.touches[0];
+
     Object.assign(document.documentElement, {
       style: `
-        --move-x: ${(e.clientX - window.innerWidth / 2) * -0.007}deg;
-        --move-y: ${(e.clientY - window.innerHeight / 2) * 0.015}deg;
-      `,
-    });
-  });
-}
-
-function onTouchMove() {
-  const isTouchSupported = 'ontouchstart' in window;
-
-  if (!isTouchSupported) return;
-
-  document.addEventListener('touchmove', (e) => {
-    Object.assign(document.documentElement, {
-      style: `
-        --move-x: ${(e.clientX - window.innerWidth / 2) * -0.007}deg;
-        --move-y: ${(e.clientY - window.innerHeight / 2) * 0.015}deg;
+        --move-x: ${(
+          ((isTouchSupported ? touch : e).clientX - window.innerWidth / 2) *
+          -0.007
+        ).toFixed(1)}deg;
+        --move-y: ${(
+          ((isTouchSupported ? touch : e).clientY - window.innerHeight / 2) *
+          0.015
+        ).toFixed(1)}deg;
       `,
     });
   });
