@@ -9,16 +9,16 @@ function randomIntFromInterval(min, max) {
 
 function onMove() {
   let event = '';
-
   const isTouchSupported =
     'ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
+
   isTouchSupported ? (event = 'touchmove') : (event = 'mousemove');
 
   document.addEventListener(event, (e) => {
     let clientEvent = e;
 
     if (isTouchSupported) {
-      let touch = e.touches[0];
+      const touch = e.touches[0];
       clientEvent = touch;
     }
 
