@@ -1,4 +1,5 @@
 onMouseMove();
+onTouchMove();
 setInterval(() => {
   generateBubbles();
 }, 500);
@@ -16,6 +17,13 @@ function onMouseMove() {
       `,
     });
   });
+}
+
+function onTouchMove() {
+  const isTouchSupported = 'ontouchstart' in window;
+
+  if (!isTouchSupported) return;
+
   document.addEventListener('touchmove', (e) => {
     Object.assign(document.documentElement, {
       style: `
