@@ -16,6 +16,14 @@ function onMouseMove() {
       `,
     });
   });
+  document.addEventListener('touchmove', (e) => {
+    Object.assign(document.documentElement, {
+      style: `
+        --move-x: ${(e.clientX - window.innerWidth / 2) * -0.007}deg;
+        --move-y: ${(e.clientY - window.innerHeight / 2) * 0.015}deg;
+      `,
+    });
+  });
 }
 
 let count = 0;
