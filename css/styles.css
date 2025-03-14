@@ -1,0 +1,166 @@
+:root {
+  --index: calc(1vw + 1vh);
+}
+
+body {
+  margin: 0;
+}
+
+.layers {
+  perspective: 1000px;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.layers__container {
+  height: 100vh;
+  transform-style: preserve-3d;
+  position: relative;
+  transform: rotateX(var(--move-y)) rotateY(var(--move-x));
+  transition: transform 0.2s ease-out;
+  will-change: transform;
+}
+
+.layer-1 {
+  position: absolute;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center 100%;
+  inset: -6vw;
+  transform: translateZ(-55px) scale(1.08);
+}
+
+.coral-1 {
+  background: url('../images/coral-1.png') no-repeat;
+  background-size: contain;
+  width: 450px;
+  height: 450px;
+  position: absolute;
+  left: -10px;
+  bottom: -10px;
+  transform: translateZ(100px) scale(1.15);
+}
+
+.coral-2 {
+  background: url('../images/coral-2.png') no-repeat;
+  background-size: contain;
+  width: 287px;
+  height: 480px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  transform: translateZ(100px);
+}
+
+.coral-3 {
+  background: url('../images/coral-3.png') no-repeat;
+  background-size: contain;
+  width: 340px;
+  height: 340px;
+  position: absolute;
+  left: 35vw;
+  bottom: -60px;
+  transform: translateZ(10px);
+}
+
+.fish {
+  position: absolute;
+}
+
+.fish-1,
+.fish-2 {
+  top: 50%;
+  right: 100%;
+  background: url('../images/fish-1.png') no-repeat;
+  background-size: contain;
+  width: calc(var(--index) * 12);
+  height: calc(var(--index) * 10);
+  transform: translateZ(60px) scale(0.28);
+  animation: fish1 20s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
+  animation-timing-function: ease-in;
+  transition: transform 0.3s linear;
+}
+
+@keyframes fish1 {
+  0% {
+    transform: translateX(0) scale(0.28);
+  }
+  30% {
+    transform: translateX(50vw) scale(0.28);
+  }
+  35% {
+    transform: translateX(51vw) scale(0.28) rotateY(-180deg);
+  }
+  65% {
+    transform: translateX(0) scale(0.28) rotateY(-180deg);
+  }
+  100% {
+    transform: translateX(0) scale(0.28) rotateY(-180deg);
+  }
+}
+
+.fish-2 {
+  animation-name: fish2;
+  animation-duration: 20s;
+  animation-delay: 5s;
+  animation-timing-function: linear;
+  transform: translate(0, -150px) scale(0.35);
+}
+
+@keyframes fish2 {
+  0% {
+    transform: translate(0, -150px) scale(0.35) rotateZ(15deg);
+  }
+  49% {
+    transform: translate(55vw, 10px) scale(0.35) rotateZ(15deg);
+  }
+  50% {
+    transform: translate(56vw, 5px) scale(0.35) rotateZ(15deg);
+  }
+  65% {
+    transform: translate(65vw, -10px) scale(0.35) rotateZ(-40deg);
+  }
+  100% {
+    transform: translate(110vw, -350px) scale(0.5) rotateZ(-40deg);
+  }
+}
+
+.fish-3 {
+  top: 0;
+  right: 100%;
+  background: url('../images/fish-1.png') no-repeat;
+  background-size: contain;
+  width: calc(var(--index) * 12);
+  height: calc(var(--index) * 10);
+  transform: translateZ(5px) scale(0.28);
+  animation: fish3 10s ease-in infinite;
+  transition: transform 0.3s linear;
+}
+
+@keyframes fish3 {
+  0% {
+    transform: translate(0, 70vh) scale(0.28);
+  }
+  40% {
+    transform: translate(70vw, 70vh) translateZ(5px) scale(0.28);
+  }
+  42% {
+    transform: translate(70vw, 70vh) translateZ(15px) scale(0.28) rotateY(-180deg);
+  }
+  65% {
+    transform: translate(0, 70vh) translateZ(15px) scale(0.28) rotateY(-180deg);
+  }
+  100% {
+    transform: translate(0, 70vh) translateZ(15px) scale(0.28) rotateY(-180deg);
+  }
+}
+
+.bubble {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: url('../images/bg-bubble.png');
+  background-size: 100%;
+  width: 60px;
+  height: 60px;
+}
