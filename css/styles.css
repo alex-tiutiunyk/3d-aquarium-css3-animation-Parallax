@@ -2,8 +2,17 @@
   --index: calc(1vw + 1vh);
 }
 
+canvas {
+  display: block;
+}
+
 body {
   margin: 0;
+}
+
+#particles-js {
+  width: 100vw;
+  height: 100vh;
 }
 
 .layers {
