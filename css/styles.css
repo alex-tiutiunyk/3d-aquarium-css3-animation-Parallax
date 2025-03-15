@@ -7,78 +7,90 @@ body {
 }
 
 .layers {
-  perspective: 1000px;
-  overflow: hidden;
   height: 100vh;
+  overflow: hidden;
+  perspective: 1000px;
 }
 
 .layers__container {
   height: 100vh;
-  transform-style: preserve-3d;
   position: relative;
   transform: rotateX(var(--move-y)) rotateY(var(--move-x));
+  transform-style: preserve-3d;
   transition: transform 0.2s ease-out;
   will-change: transform;
 }
 
 .layer-1 {
   position: absolute;
+  inset: -6vw;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center 100%;
-  inset: -6vw;
   transform: translateZ(-55px) scale(1.08);
 }
 
-.coral-1 {
-  background: url('../images/coral-1.png') no-repeat;
+.coral {
+  background-repeat: no-repeat;
   background-size: contain;
+  position: absolute;
+}
+
+.coral-1 {
   width: calc(var(--index) * 22);
   height: calc(var(--index) * 22);
-  position: absolute;
   left: -10px;
   bottom: -10px;
+  background-image: url('../images/coral-1.png');
   transform: translateZ(100px) scale(1.15);
 }
 
 .coral-2 {
-  background: url('../images/coral-2.png') no-repeat;
-  background-size: contain;
   width: calc(var(--index) * 13);
   height: calc(var(--index) * 21.7);
-  position: absolute;
   right: 0;
   bottom: 0;
+  background-image: url('../images/coral-2.png');
   transform: translateZ(100px);
 }
 
 .coral-3 {
-  background: url('../images/coral-3.png') no-repeat;
-  background-size: contain;
   width: calc(var(--index) * 15);
   height: calc(var(--index) * 15);
-  position: absolute;
-  left: 35vw;
   bottom: -60px;
+  left: 35vw;
+  background-image: url('../images/coral-3.png');
   transform: translateZ(10px);
 }
 
 .fish {
+  width: calc(var(--index) * 12);
+  height: calc(var(--index) * 10);
   position: absolute;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: transform 0.3s linear;
 }
 
 .fish-1,
-.fish-2 {
+.fish-2,
+.fish-3 {
   top: 50%;
   right: 100%;
-  background: url('../images/fish-1.png') no-repeat;
-  background-size: contain;
-  width: calc(var(--index) * 12);
-  height: calc(var(--index) * 10);
+  background-image: url('../images/fish-1.png');
   transform: translateZ(60px) scale(0.28);
-  animation: fish1 20s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
-  animation-timing-function: ease-in;
-  transition: transform 0.3s linear;
+  animation: fish1 20s ease-in infinite;
+}
+
+.fish-2 {
+  transform: translate(0, -150px) scale(0.35);
+  animation: fish2 20s linear 5s infinite;
+}
+
+.fish-3 {
+  top: 0;
+  transform: translateZ(5px) scale(0.28);
+  animation: fish3 10s ease-in infinite;
 }
 
 @keyframes fish1 {
@@ -99,14 +111,6 @@ body {
   }
 }
 
-.fish-2 {
-  animation-name: fish2;
-  animation-duration: 20s;
-  animation-delay: 5s;
-  animation-timing-function: linear;
-  transform: translate(0, -150px) scale(0.35);
-}
-
 @keyframes fish2 {
   0% {
     transform: translate(0, -150px) scale(0.35) rotateZ(15deg);
@@ -123,18 +127,6 @@ body {
   100% {
     transform: translate(110vw, -350px) scale(0.5) rotateZ(-40deg);
   }
-}
-
-.fish-3 {
-  top: 0;
-  right: 100%;
-  background: url('../images/fish-1.png') no-repeat;
-  background-size: contain;
-  width: calc(var(--index) * 12);
-  height: calc(var(--index) * 10);
-  transform: translateZ(5px) scale(0.28);
-  animation: fish3 10s ease-in infinite;
-  transition: transform 0.3s linear;
 }
 
 @keyframes fish3 {
@@ -156,11 +148,12 @@ body {
 }
 
 .bubble {
+  width: calc(var(--index) * 2.5);
+  height: calc(var(--index) * 2.5);
   position: absolute;
   top: 100%;
   left: 0;
   background: url('../images/bg-bubble.png');
   background-size: 100%;
-  width: calc(var(--index) * 2.5);
-  height: calc(var(--index) * 2.5);
+  opacity: 0.6;
 }
