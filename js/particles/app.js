@@ -70,7 +70,7 @@ particlesJS(
       },
       move: {
         enable: true,
-        speed: 0.7,
+        speed: 0.3,
         direction: 'top',
         random: false,
         straight: false,
