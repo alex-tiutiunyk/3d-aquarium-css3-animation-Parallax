@@ -86,7 +86,7 @@ body {
 .fish-1 {
   top: 50%;
   background-image: url('../images/fish-1.png');
-  animation: fish1 20s ease-in infinite;
+  /* animation: fish1 20s ease-in infinite; */
 }
 
 /* .fish-2 {
@@ -103,35 +103,35 @@ body {
 .fish-2 {
   top: 0;
   background-image: url('../images/fish-2.png');
-  animation: fish2 10s ease-in infinite;
+  /* animation: fish2 10s ease-in infinite; */
 }
 
 .fish-3 {
   width: calc(var(--index) * 4.5);
   top: 0;
   background-image: url('../images/fish-3.png');
-  animation: fish3 10s ease-in infinite;
+  /* animation: fish3 10s ease-in infinite; */
 }
 
 .fish-4 {
   width: calc(var(--index) * 6.5);
   top: 0;
   background-image: url('../images/fish-4.png');
-  animation: fish4 15s ease-in infinite;
+  /* animation: fish4 15s ease-in infinite; */
 }
 
 .fish-5 {
   width: calc(var(--index) * 8.5);
   top: 0;
   background-image: url('../images/fish-5.png');
-  animation: fish5 8s ease-in infinite;
+  /* animation: fish5 8s ease-in infinite; */
 }
 
 .fish-6 {
   width: calc(var(--index) * 8.5);
   top: 0;
   background-image: url('../images/fish-6.png');
-  animation: fish6 13s ease-in infinite;
+  /* animation: fish6 13s ease-in infinite; */
 }
 
 /* @keyframes fish1 {
@@ -188,7 +188,7 @@ body {
   }
 } */
 
-@keyframes fish1 {
+/* @keyframes fish1 {
   0% {
     transform: translate(-10vw, 10vh) scale(0.5);
   }
@@ -240,7 +240,7 @@ body {
   100% {
     transform: translate(110vw, 70vh) scale(0.65);
   }
-}
+} */
 
 .bubble {
   width: calc(var(--index) * 2.5);
