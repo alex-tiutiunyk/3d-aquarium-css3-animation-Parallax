@@ -78,169 +78,39 @@ body {
   height: calc(var(--index) * 6);
   position: absolute;
   right: 100%;
+  top: 0;
   background-repeat: no-repeat;
   background-size: contain;
   transition: transform 0.3s linear;
 }
 
 .fish-1 {
-  top: 50%;
   background-image: url('../images/fish-1.png');
-  /* animation: fish1 20s ease-in infinite; */
 }
 
-/* .fish-2 {
-  transform: translate(0, -150px) scale(0.35);
-  animation: fish2 20s linear 5s infinite;
-} */
-
-/* .fish-3 {
-  top: 0;
-  transform: translateZ(5px) scale(0.28);
-  animation: fish3 10s ease-in infinite;
-} */
-
 .fish-2 {
-  top: 0;
   background-image: url('../images/fish-2.png');
-  /* animation: fish2 10s ease-in infinite; */
 }
 
 .fish-3 {
   width: calc(var(--index) * 4.5);
-  top: 0;
   background-image: url('../images/fish-3.png');
-  /* animation: fish3 10s ease-in infinite; */
 }
 
 .fish-4 {
   width: calc(var(--index) * 6.5);
-  top: 0;
   background-image: url('../images/fish-4.png');
-  /* animation: fish4 15s ease-in infinite; */
 }
 
 .fish-5 {
   width: calc(var(--index) * 8.5);
-  top: 0;
   background-image: url('../images/fish-5.png');
-  /* animation: fish5 8s ease-in infinite; */
 }
 
 .fish-6 {
   width: calc(var(--index) * 8.5);
-  top: 0;
   background-image: url('../images/fish-6.png');
-  /* animation: fish6 13s ease-in infinite; */
 }
-
-/* @keyframes fish1 {
-  0% {
-    transform: translateX(0);
-  }
-  30% {
-    transform: translateX(50vw);
-  }
-  35% {
-    transform: translateX(51vw) rotateY(-180deg);
-  }
-  65% {
-    transform: translateX(0) rotateY(-180deg);
-  }
-  100% {
-    transform: translateX(0) rotateY(-180deg);
-  }
-} */
-
-/* @keyframes fish2 {
-  0% {
-    transform: translate(0, -150px) scale(0.35) rotateZ(15deg);
-  }
-  49% {
-    transform: translate(55vw, 10px) scale(0.35) rotateZ(15deg);
-  }
-  50% {
-    transform: translate(56vw, 5px) scale(0.35) rotateZ(15deg);
-  }
-  65% {
-    transform: translate(65vw, -10px) scale(0.35) rotateZ(-40deg);
-  }
-  100% {
-    transform: translate(110vw, -350px) scale(0.5) rotateZ(-40deg);
-  }
-} */
-
-/* @keyframes fish3 {
-  0% {
-    transform: translate(0, 70vh) scale(0.28);
-  }
-  40% {
-    transform: translate(70vw, 70vh) translateZ(5px) scale(0.28);
-  }
-  42% {
-    transform: translate(70vw, 70vh) translateZ(15px) scale(0.28) rotateY(-180deg);
-  }
-  65% {
-    transform: translate(0, 70vh) translateZ(15px) scale(0.28) rotateY(-180deg);
-  }
-  100% {
-    transform: translate(0, 70vh) translateZ(15px) scale(0.28) rotateY(-180deg);
-  }
-} */
-
-/* @keyframes fish1 {
-  0% {
-    transform: translate(-10vw, 10vh) scale(0.5);
-  }
-  100% {
-    transform: translate(110vw, 30vh) scale(0.5);
-  }
-}
-
-@keyframes fish2 {
-  0% {
-    transform: translate(-10vw, 10vh) scale(0.5);
-  }
-  100% {
-    transform: translate(110vw, 30vh) scale(0.5);
-  }
-}
-
-@keyframes fish3 {
-  0% {
-    transform: translate(-10vw, 30vh) scale(0.8);
-  }
-  100% {
-    transform: translate(110vw, 30vh) scale(0.8);
-  }
-}
-
-@keyframes fish4 {
-  0% {
-    transform: translate(110vw, 30vh) scale(0.65) rotateY(180deg);
-  }
-  100% {
-    transform: translate(-10vw, 10vh) scale(0.65) rotateY(180deg);
-  }
-}
-
-@keyframes fish5 {
-  0% {
-    transform: translate(110vw, 70vh) scale(0.65) rotateY(180deg);
-  }
-  100% {
-    transform: translate(-10vw, 10vh) scale(0.65) rotateY(180deg);
-  }
-}
-
-@keyframes fish6 {
-  0% {
-    transform: translate(-10vw, 50vh) scale(0.65);
-  }
-  100% {
-    transform: translate(110vw, 70vh) scale(0.65);
-  }
-} */
 
 .bubble {
   width: calc(var(--index) * 2.5);

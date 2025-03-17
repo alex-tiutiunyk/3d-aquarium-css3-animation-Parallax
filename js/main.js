@@ -90,7 +90,6 @@ function generateFish() {
   const yStart = randomIntFromInterval(10, 90);
   const yFinish = randomIntFromInterval(10, 90);
   const size = Number((randomIntFromInterval(10, 90) * 0.01).toFixed(2));
-  console.log(size);
   const time = randomIntFromInterval(5000, 30000);
 
   countFishes++;
