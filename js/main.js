@@ -89,6 +89,7 @@ function generateFish() {
   const direction = randomIntFromInterval(0, 1);
   const yStart = randomIntFromInterval(10, 90);
   const yFinish = randomIntFromInterval(10, 90);
+  const z = randomIntFromInterval(10, 120);
   const size = Number((randomIntFromInterval(10, 90) * 0.01).toFixed(2));
   const time = randomIntFromInterval(5000, 30000);
 
@@ -103,8 +104,8 @@ function generateFish() {
   if (direction === 0) {
     newFish.animate(
       [
-        { transform: `translate(-10vw, ${yStart}vh) translateZ(50px) scale(${size})` },
-        { transform: `translate(110vw, ${yFinish}vh) translateZ(50px) scale(${size + 0.3})` },
+        { transform: `translate(-10vw, ${yStart}vh) translateZ(${z}px) scale(${size})` },
+        { transform: `translate(110vw, ${yFinish}vh) translateZ(${z}px) scale(${size + 0.3})` },
       ],
       {
         duration: time,
